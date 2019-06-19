@@ -20,10 +20,12 @@ export class HomePage {
     
   }
 
-  changeDistance(location){
-   var result = this.calculateService.calDistance('mandla',location);
-
-   console.log(result);
+  async changeDistance(location){
+    await this.calculateService.calDistance('jabalpur',location)
+   .subscribe(res =>{
+     console.log(res)
+   });
+  
   }
   
 
