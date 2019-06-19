@@ -1,14 +1,39 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Distance Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    Lav kushwaha.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  
+    
+
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+          
+            <ion-input placeholder="Enter Input"></ion-input>
+        
+        <ion-button fill="outline" slot="end" id="printToConsole">Calculate Distance</ion-button>
+      </ion-item>
+    
+      <ion-card-content>
+        Search anything to find how much distanced it is from you. 
+      </ion-card-content>
+    </ion-card>
+    
+    
+    <ion-card id="result" [hidden]=true>
+      <ion-item>
+        <ion-icon name="walk" slot="start"></ion-icon>
+        <ion-label id="result-label">Distance will be shown here</ion-label>
+      </ion-item>
+    </ion-card>
+
+
+
   </div>
 </ion-content>
