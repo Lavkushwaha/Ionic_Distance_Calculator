@@ -15,9 +15,9 @@
       <ion-item>
         <ion-icon name="pin" slot="start"></ion-icon>
           
-            <ion-input placeholder="Enter Input"></ion-input>
+            <ion-input type="text" [(ngModel)]="location" placeholder="Enter Input"></ion-input>
         
-        <ion-button fill="outline" slot="end" id="printToConsole">Calculate Distance</ion-button>
+        <ion-button fill="outline" slot="end" id="printToConsole" (click)="changeDistance(location)" >find</ion-button>
       </ion-item>
     
       <ion-card-content>

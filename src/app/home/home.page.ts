@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { CalculateService } from '../service/calculate.service';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,12 +10,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {
+  constructor(private calculateService : CalculateService) {
     
 
   }
 
 
+  ngOnint(){
+    
+  }
+
+  changeDistance(location){
+   var result = this.calculateService.calDistance('mandla',location);
+
+   console.log(result);
+  }
   
 
 }
