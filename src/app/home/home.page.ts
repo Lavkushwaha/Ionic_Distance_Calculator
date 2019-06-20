@@ -21,11 +21,15 @@ export class HomePage {
   }
 
   async changeDistance(location){
-     await this.calculateService.calDistance('jabalpur',location);
-      
-       
-      
+    var results = await this.calculateService.calDistance('jabalpur',location)
+    results.subscribe(res=>{
+      console.log(res['rows']['0']['elements']['0']['distance']['text'])
+    }); 
   }
   
+
+  async changeLocation(){
+    await this.calculateService.getCurrentLoc();
+  }
 
 }
