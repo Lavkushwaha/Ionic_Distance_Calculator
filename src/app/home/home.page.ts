@@ -29,7 +29,6 @@ export class HomePage {
     this.origin_address=null;
     this.travel_duration=null;
     this.location=null;
-    
   }
 
   reset(){
