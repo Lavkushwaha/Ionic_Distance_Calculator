@@ -1,8 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 //import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+const httpOptions = {
+  headers:
+  new HttpHeaders (
+  {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "http://localhost:8100/",
+    
+  }),
+withCredentials: true,
+};
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +31,7 @@ export class CalculateService {
 
   
 
-  calDistance(origin:string,destination:string): Observable<any>{
+ async calDistance(origin:string,destination:string){
   
 
 
@@ -33,8 +44,17 @@ export class CalculateService {
     //    console.log('Error getting location', error);
     //  });
   
+  
+    
 
-    return this.http.get(`${this.url}&origins=${origin}&destinations=${destination}&key=${this.key}`);
+     await this.http.get(`${this.url}&origins=${origin}&destinations=${destination}&key=${this.key}`, httpOptions).subscribe(res =>{
+      console.log(res)
+    });
+
+    // await this.http.get('https://jsonplaceholder.typicode.com/todos/',httpOptions).subscribe(res=>{
+    //   console.log(res)
+    // });
+
   }
 
   

@@ -21,11 +21,10 @@ export class HomePage {
   }
 
   async changeDistance(location){
-    await this.calculateService.calDistance('jabalpur',location)
-   .subscribe(res =>{
-     console.log(res)
-   });
-  
+     await this.calculateService.calDistance('jabalpur',location);
+      
+       
+      
   }
   
 
